@@ -4,6 +4,9 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageDescription>Common libraries used by play economy services.</PackageDescription>
+    <Authors>yassMokh</Authors>
+    <Company>DotNetMicroservicesBasics</Company>
   </PropertyGroup>
 
   <ItemGroup>
