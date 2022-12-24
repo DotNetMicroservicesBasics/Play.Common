@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageDescription>Common libraries used by play economy services.</PackageDescription>
-    <Authors>yassMokh</Authors>
+    <Authors>yasserMokh</Authors>
     <Company>DotNetMicroservicesBasics</Company>
   </PropertyGroup>
 
