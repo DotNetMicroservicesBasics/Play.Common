@@ -3,7 +3,7 @@ Common libraries used by play economy services.
 
 ## Create and publish package
 ```powershell
-$version="1.0.11"
+$version="1.0.12"
 $owner="DotNetMicroservicesBasics"
 $local_packages_path="D:\Dev\NugetPackages"
 $gh_pat="PAT HERE"
