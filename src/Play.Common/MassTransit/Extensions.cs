@@ -56,6 +56,7 @@ namespace Play.Common.MassTansit
                 configure.AddConsumers(Assembly.GetEntryAssembly());
                 configure.UsingPlayEconomyRabbitMq(configureRetries);
             });
+            services.AddMassTransitHostedService();
             return services;
         }
 
@@ -83,6 +84,7 @@ namespace Play.Common.MassTansit
                 configure.AddConsumers(Assembly.GetEntryAssembly());
                 configure.UsingPlayEconomyAzureServiceBus(configureRetries);
             });
+            services.AddMassTransitHostedService();
             return services;
         }
 
