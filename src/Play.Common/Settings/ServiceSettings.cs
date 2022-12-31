@@ -4,6 +4,8 @@ namespace Play.Common.Settings
     {
         public string ServiceName { get; init; }
 
-        public string MessageBroker { get; set; }
+        public string MessageBroker { get; init; }
+
+        public string KeyVaultName { get; init; }
     }
 }
