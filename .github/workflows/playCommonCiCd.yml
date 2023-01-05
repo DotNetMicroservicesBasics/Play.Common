@@ -23,7 +23,7 @@ jobs:
     outputs:
       new_version: ${{steps.tag_bump.outputs.new_tag}}    
     
-  package-and-publish-contracts:
+  package-and-publish-package:
     runs-on: ubuntu-latest
     needs: generate-version
     steps:
