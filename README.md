@@ -12,3 +12,8 @@ dotnet pack src\Play.Common --configuration Release -p:PackageVersion=$version -
 
 dotnet nuget push $local_packages_path\Play.Common.$version.nupkg --api-key $gh_pat --source github
 ```
+
+## Required repository secrets for Github workflow
+```powershell
+NUGET_WRITE_PAT: Created in GitHub user profile --> Settings --> Developer settings --> Personal access token
+```
