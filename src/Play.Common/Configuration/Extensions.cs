@@ -1,5 +1,6 @@
 using Azure.Identity;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Play.Common.Settings;
 
 namespace Play.Common.Configuration
@@ -14,7 +15,17 @@ namespace Play.Common.Configuration
             return builder.AddAzureKeyVault(
                                 new Uri($"https://{serviceSettings.KeyVaultName}.vault.azure.net/"),
                                 new DefaultAzureCredential()
-                                );
+                                );            
+        }
+
+        public static IHostBuilder ConfigureAzureKeyVault(this IHostBuilder hostBuilder){
+            return hostBuilder.ConfigureAppConfiguration((context, configurationBuilder) =>
+                {
+                    if (context.HostingEnvironment.IsProduction())
+                    {
+                        configurationBuilder.ConfigureAzureKeyVault();
+                    }
+                });                
         }
     }
 }
