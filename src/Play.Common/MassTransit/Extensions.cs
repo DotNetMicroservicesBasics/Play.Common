@@ -63,6 +63,7 @@ namespace Play.Common.MassTansit
             {
                 var configuration = context.GetService<IConfiguration>();
                 var rabitMqSettings = configuration.GetSection(nameof(RabbitMqSettings)).Get<RabbitMqSettings>();
+                var serviceSettings = configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
                 configurator.Host(rabitMqSettings.Host);
                 configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(rabitMqSettings.Prefix, false));
                 if (configureRetries == null)
@@ -71,6 +72,7 @@ namespace Play.Common.MassTansit
                 }
 
                 configurator.UseMessageRetry(configureRetries);
+                configurator.UseInstrumentation(serviceName: serviceSettings.ServiceName);
             });
         }
 
@@ -91,6 +93,7 @@ namespace Play.Common.MassTansit
             {
                 var configuration = context.GetService<IConfiguration>();
                 var serviceBusSettings = configuration.GetSection(nameof(ServiceBusSettings)).Get<ServiceBusSettings>();
+                var serviceSettings = configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
                 configurator.Host(serviceBusSettings.ConnectionString);
                 configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceBusSettings.Prefix, false));
                 if (configureRetries == null)
@@ -99,6 +102,7 @@ namespace Play.Common.MassTansit
                 }
 
                 configurator.UseMessageRetry(configureRetries);
+                configurator.UseInstrumentation(serviceName: serviceSettings.ServiceName);
             });
         }
     }
