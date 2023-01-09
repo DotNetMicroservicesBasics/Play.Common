@@ -20,6 +20,12 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
     <PackageReference Include="Seq.Extensions.Logging" Version="6.1.0" />
+    <PackageReference Include="OpenTelemetry" Version="1.2.0" />   
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.2.0" />   
+    <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.2.0" />   
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc9.2" />   
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc9" />   
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc9" />   
   </ItemGroup>
 
 </Project>
